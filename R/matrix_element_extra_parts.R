@@ -172,8 +172,8 @@ sphere_mat_element <- function(l, lprime, ml){
     }
   } else{
 
-    # MatElem <- "Error. Must meet condition l\' = l +/- 1."
     stop("Must meet condition l\' = l +/- 1.")
+
   }
 
   MatElem
