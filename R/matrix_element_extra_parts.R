@@ -83,7 +83,26 @@ wigner_3j <- function(j1,j2,j3,m1,m2,m3){
 }
 
 #Calculates the Clebsch-Gordan coefficient using the analytic form found in Cornwell's Group Theory of Physics for arbitrary j1, j2, m1, m2, j, and mj.
-Clebsch_GordanV2 <- function(j1,j2,m1,m2,j,mj){
+#' Clebsch-Gordan Coeffcient Alternate Version.
+#'
+#' \code{clebsch_gordan} calculates the Clebsch-Gordan coefficient
+#'
+#' This function calculates the Clebsch-Gordan coeffcient for an arbitrary
+#' selection of quantum numbers j_1, j_2, m_1, m_2, j, and m_j. The condition
+#' that must be met is (m_1 + m_2) = m_j. The analytic form used to calculate
+#' the Clebsch-Gordan coefficient can be found in Cornwell's Group Theory of
+#' Physics.
+#'
+#' @param j1 A numeric. The total angular momentum for state 1.
+#' @param j2 A numeric. The total angular momentum for state 2.
+#' @param m1 A numeric. The magnetic quantum number for state 1.
+#' @param m2 A numeric. The magnetic quantum number for state 2.
+#' @param j A numeric. The combined total angular momentum.
+#' @param mj A numeric. The combined magnetic quantum number.
+#'
+#' @examples
+#' clebsch_gordan2(1, 1 / 2, 0, 1 / 2, 3 / 2, 1 / 2)
+clebsch_gordan2 <- function(j1,j2,m1,m2,j,mj){
 
   #If case for the conditions that m1+m2 = mj
   if((m1+m2)!=mj){
