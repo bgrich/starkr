@@ -27,9 +27,9 @@ coefficient calculated in \code{\link{clebsch_gordan}}.
 This function calculates the Wigner 3j symbol using the Clebsch-Gordan
 coefficient calculated in \code{\link{clebsch_gordan}}. The Wigner 3j symbol
 can be written as follows:
-(\tabular{ccc}{
+\tabular{ccc}{
 j1 \tab j2 \tab j3\cr
 m1 \tab m2 \tab m3
-})
+}
 }
 
