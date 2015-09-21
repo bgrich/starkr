@@ -144,8 +144,6 @@ clebsch_gordan2 <- function(j1, j2, m1, m2, j, mj){
   CG
 }
 
-#Calculates the Spherical Harmonic contribution to the matrix element: <l,m|cos(theta)|l',m>. This is based on Zimmerman et al, PRA 20, 2251 (1979).
-
 #' Spherical Matrix Element.
 #'
 #' \code{sphere_mat_element} calculates the spherical matrix element
@@ -159,17 +157,17 @@ clebsch_gordan2 <- function(j1, j2, m1, m2, j, mj){
 #' @param ml A numeric. The magnetic momentum of both the starting and final
 #' state. The m_l of each state must be equal.
 sphere_mat_element <- function(l, lprime, ml){
-  if((lprime==(l+1))|(lprime==(l-1))){
+  if((lprime == (l + 1)) | (lprime == (l - 1))){
     #If lprime is equal to l-1, then this if statement is processed
-    if(lprime == (l-1)){
+    if(lprime == (l - 1)){
 
-      MatElem <- sqrt((l^2 - ml^2)/((2*l+1)*(2*l-1)))
+      MatElem <- sqrt((l ^ 2 - ml ^ 2) / ((2 * l + 1) * (2 * l - 1)))
 
     }
     #If lprime is equal to l+1, then this if statement is processed
-    if(lprime == (l+1)){
+    if(lprime == (l + 1)){
 
-      MatElem <- sqrt(((l+1)^2 - ml^2)/((2*l+3)*(2*l+1)))
+      MatElem <- sqrt(((l + 1) ^ 2 - ml ^ 2) / ((2 * l + 3) * (2 * l + 1)))
 
     }
   } else{
