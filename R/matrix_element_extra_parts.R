@@ -1,8 +1,3 @@
-#Calculating the 3j symbol and Clebsch-Gordan coefficient
-
-#Calculates the Clebsch-Gordan coefficient for an arbitrary j1, j2, m1, m2, j, and mj using the analytic form found in Bob's Atomic Physics notes.
-
-
 #' Clebsch-Gordan Coeffcient.
 #'
 #' \code{clebsch_gordan} calculates the Clebsch-Gordan coefficient
@@ -22,16 +17,16 @@
 #'
 #' @examples
 #' clebsch_gordan(1, 1 / 2, 0, 1 / 2, 3 / 2, 1 / 2)
-clebsch_gordan <- function(j1,j2,m1,m2,j,mj){
+clebsch_gordan <- function(j1, j2, m1, m2, j, mj){
 
   #If case for the conditions that m1+m2 = mj
-  if((m1+m2)!=mj){
+  if((m1 + m2)!= mj){
     CG <- 0
   } else {
     #Calculates the terms that are not in the summation
-    NotSumNumerator <- sqrt((2*j+1)*factorial(j1+j2-j)*factorial(j1-m1)*factorial(j2-m2)*factorial(j+mj)*factorial(j-mj))
+    NotSumNumerator <- sqrt((2 * j + 1) * factorial(j1 + j2 - j) * factorial(j1 - m1) * factorial(j2 - m2) * factorial(j + mj) * factorial(j - mj))
 
-    NotSumDenominator <- sqrt(factorial(j1+j2+j+1)*factorial(j1-j2+j)*factorial(-j1+j2+j)*factorial(j1+m1)*factorial(j2+m2))
+    NotSumDenominator <- sqrt(factorial(j1 + j2 + j + 1) * factorial(j1 - j2 + j) * factorial(-j1 + j2 + j) * factorial(j1 + m1) * factorial(j2 + m2))
 
     #Settings for the summation. Summation only counts up to s = 4999. If j's and m's are such that one of the terms would be beyond N, then the code will not handle all possible cases.
     N <- 5000
@@ -40,24 +35,24 @@ clebsch_gordan <- function(j1,j2,m1,m2,j,mj){
     sum_s <- 0
     for(i in 1:N){
       D1 <- s
-      D2 <- j1-m1-s
-      D3 <- j-mj-s
-      D4 <- j2-j+m1+s
+      D2 <- j1 - m1 - s
+      D3 <- j - mj - s
+      D4 <- j2 - j + m1 + s
 
       #If any of the denominator terms (D1 to D4) are negative then the term returns zero
-      if((D1<0)|(D2<0)|(D3<0)|(D4<0)){
+      if((D1 < 0) | (D2 < 0) | (D3 < 0) | (D4 < 0)){
         sum_s <- 0
       } else{
 
         #Calculates the terms in the summation at this step of s
-        sum_s <- (-1)^(s+j1-m1)*factorial(j1+m1+s)*factorial(j2+j-m1-s)/(factorial(D1)*factorial(D2)*factorial(D3)*factorial(D4))
+        sum_s <- (-1) ^ (s + j1 - m1) * factorial(j1 + m1 + s) * factorial(j2 + j - m1 - s) / (factorial(D1) * factorial(D2) * factorial(D3) * factorial(D4))
 
       }
       #Adds current term to the sum and increments s
-      sum <- sum+sum_s
-      s <- s+1
+      sum <- sum + sum_s
+      s <- s + 1
     }
-    CG <- (NotSumNumerator/NotSumDenominator)*sum
+    CG <- (NotSumNumerator / NotSumDenominator) * sum
   }
 
   CG
