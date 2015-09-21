@@ -58,8 +58,26 @@ clebsch_gordan <- function(j1, j2, m1, m2, j, mj){
   CG
 }
 
-#Calculates the Wigner3j coefficient using the Clebsch-Gordan coefficient code above
-Wigner3j <- function(j1,j2,j3,m1,m2,m3){
+#' Wigner 3j Symbol.
+#'
+#' \code{wigner_3j} calculates the Wigner 3j symbol using the Clebsch-Gordan
+#' coefficient calculated in \code{\link{clebsch_gordan}}.
+#'
+#' This function calculates the Wigner 3j symbol using the Clebsch-Gordan
+#' coefficient calculated in \code{\link{clebsch_gordan}}. The Wigner 3j symbol
+#' can be written as follows:
+#' \tabular{ccc}{
+#' j1 \tab j2 \tab j3\cr
+#' m1 \tab m2 \tab m3
+#' }
+#'
+#' @param j1 A numeric.
+#' @param j2 A numeric.
+#' @param j3 A numeric.
+#' @param m1 A numeric.
+#' @param m2 A numeric.
+#' @param m3 A numeric.
+wigner_3j <- function(j1,j2,j3,m1,m2,m3){
   output <- (-1)^(j1-j2-m3)*Clebsch_Gordan(j1,j2,m1,m2,j3,-m3)/sqrt(2*j3+1)
   output
 }
