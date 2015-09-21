@@ -11,3 +11,4 @@
 
 # produced vignettes
 vignettes/*.htmlvignettes/*.pdf
+.Rproj.user

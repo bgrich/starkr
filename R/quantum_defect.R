@@ -1,7 +1,3 @@
-# Requires as input the principal quantum number n, orbital angular momentum
-# number l, and total angular momentum number j.
-# For example, if l = 1 and j = 1/2, this is the np_1/2 state.
-
 #' Quantum Defect Calculation.
 #'
 #' \code{quantum_defect} calculates the quantum defect for an arbitrary state
@@ -11,6 +7,8 @@
 #'  (n, l, j) in Rubidium-85. Depending on the choices of l and j, the proper
 #'  parameters will be selected and the quantum defect will be calculated
 #'  according to equation (16.19) on pg. 351 of Rydberg Atoms by Gallagher.
+#'  For example, given an arbitrary n, l = 1, and j = 1/2, the quantum defect
+#'  for the state np_1/2 would be calculated.
 #'
 #'  @param n A numeric. The principle quantum number n.
 #'  @param l A numeric. The orbital angular momentum quantum number l.
