@@ -1,10 +1,26 @@
-# Function to determine the quantum defect delta_nlj of an arbitrary state in Rubidium-85
-
 # Requires as input the principal quantum number n, orbital angular momentum
 # number l, and total angular momentum number j.
 # For example, if l = 1 and j = 1/2, this is the np_1/2 state.
 
-QuantumDefect <- function(n,l,j){
+#' Quantum Defect Calculation.
+#'
+#' \code{quantum_defect} calculates the quantum defect for an arbitrary state
+#' (n, l, j) for Rubidium-85
+#'
+#'  This function calculates the quantum defect for an arbitrary state
+#'  (n, l, j) in Rubidium-85. Depending on the choices of l and j, the proper
+#'  parameters will be selected and the quantum defect will be calculated
+#'  according to equation (16.19) on pg. 351 of Rydberg Atoms by Gallagher.
+#'
+#'  @param n A numeric. The principle quantum number n.
+#'  @param l A numeric. The orbital angular momentum quantum number l.
+#'  @param j A numeric. The total angular momentum quantum number j.
+#'
+#'  @examples
+#'  quantum_defect(32, 1, 1.5)
+#'  quantum_defect(5, 0, 0.5)
+
+quantum_defect <- function(n,l,j){
 
   #Chooses the quantum defect parameters based on the l and j quantum numbers.
   #The quantum defect parameters come from updated values from a variety of
