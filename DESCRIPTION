@@ -1,13 +1,15 @@
 Package: starkr
 Type: Package
 Title: Calculation of Stark Maps for Rubidium-85
-Version: 0.1
+Version: 0.1.0.9000
 Date: 2015-09-17
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Brian", "Richards", email = "brian.g.richards@gmail.com", role = c("aut", "cre"))
 Description: This package can be used to calculate the Stark matrix for
     arbitrary state n in Rubidium-85. As part of these calculations, functions
     are included to calculate the quantum defect, radial matrix element,
     spherical harmonics, Clebsch-Gordan coefficients, and other necessary
     pieces for the Stark matrix element.
-License: What license is it under?
+URL: https://github.com/bgrich/starkr
+BugReports: https://github.com/bgrich/starkr/issues
+License: GPL-3
 LazyData: TRUE
