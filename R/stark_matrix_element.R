@@ -1,5 +1,24 @@
 #Calculates the matrix element for the Stark effect contribution to the energy of each state. Accepts an arbitrary n1, n2, l1, l2, j1, j2, mj1, mj2. Uses the adjusted Quantum Defect calculation.
 
+
+#' Stark Matrix Element.
+#'
+#' \code{stark_matrix_element} calculates the elements of a Stark matrix
+#'
+#' This function calculates the elements of a Stark matrix for an arbitrary
+#' set of states (n1, l1, j1, mj1) and (n2, l2, j2, mj2). The element is
+#' determined based on equation 10 from Zimmerman et al., PRA, 20, 2251 (1979).
+#' For a non-zero matrix element, the conditions mj1 = mj2 and l2 = l1 +/- 1
+#' must be met.
+#'
+#' @param n1 A numeric. The principle quantum number of state 1.
+#' @param n2 A numeric. The principle quantum number of state 2.
+#' @param l1 A numeric. The orbital angular momentum number of state 1.
+#' @param l2 A numeric. The orbital angular momentum number of state 2.
+#' @param j1 A numeric. The total angular momentum number of state 1.
+#' @param j2 A numeric. The total angular momentum number of state 2.
+#' @param mj1 A numeric. The magnetic angular momentum number of state 1.
+#' @param mj2 A numeric. The magnetic angular momentum number of state 2.
 stark_matrix_elem <- function(n1, n2, l1, l2, j1, j2, mj1, mj2){
 
   #Determines if the two mj terms are the same, if they are not then the matrix element is set to zero
