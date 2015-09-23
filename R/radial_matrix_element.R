@@ -5,8 +5,8 @@
 #' This function calculates the radial matrix element for two arbitrary states
 #' (n1, l1, j1) and (n2, l2, j2). A Numerov algorithm is used to compute the
 #' radial matrix elements as done in Appendix A of Zimmerman et al, PRA, 20, 2251
-#' (1979). The scaling used in this function is \eqn{ksi = sqrt{r}},
-#' \eqn{Psi = r^{3/4}R(r)} as done by Bhatti, Cromer, and Cooke, PRA, 24, 161
+#' (1979). The scaling used in this function is \eqn{\xi = \sqrt r},
+#' \eqn{\Psi = r^(3/4) R(r)} as done by Bhatti, Cromer, and Cooke, PRA, 24, 161
 #' (1981).
 #'
 #' @param k A numeric. The power of r to be calculated over. To get a dipole
