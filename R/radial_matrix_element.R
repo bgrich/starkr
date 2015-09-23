@@ -10,14 +10,14 @@
 #' (1981).
 #'
 #' @param k A numeric. The power of r to be calculated over. To get a dipole
-#' matrix element, k must be equal to 1.
+#' matrix element, k must be equal to 1. Default k = 1.
 #' @param n1 A numeric. The principle quantum number of state 1.
 #' @param n2 A numeric. The principle quantum number of state 2.
 #' @param l1 A numeric. The orbital angular momentum number of state 1.
 #' @param l2 A numeric. The orbital angular momentum number of state 2.
 #' @param j1 A numeric. The total angular momentum number of state 1.
 #' @param j2 A numeric. The total angular momentum number of state 2.
-radial_matrix_element <- function(k,n1,n2,l1,l2,j1,j2){
+radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   # Number of Electrons
   Z <- 1
 
