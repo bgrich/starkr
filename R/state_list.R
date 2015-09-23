@@ -60,10 +60,10 @@ state_list <- function(nmin, nmax, mj, n_add_min = 7, n_add_max = 7){
       l <- l0
       for(j in (l0):(5)){
         if(l == l0){
-          NumberMatrix <- rbind(NumberMatrix, c(nadd[i],l,mj))
+          StateList <- rbind(StateList, c(nadd[i],l,mj))
         } else{
-          NumberMatrix <- rbind(NumberMatrix, c(nadd[i],l,l-1/2))
-          NumberMatrix <- rbind(NumberMatrix, c(nadd[i],l,l+1/2))
+          StateList <- rbind(StateList, c(nadd[i],l,l-1/2))
+          StateList <- rbind(StateList, c(nadd[i],l,l+1/2))
         }
         l <- l + 1
       }
@@ -71,5 +71,5 @@ state_list <- function(nmin, nmax, mj, n_add_min = 7, n_add_max = 7){
   }
 
   #Returns the number matrix
-  NumberMatrix
+  StateList
 }
