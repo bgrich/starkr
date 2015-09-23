@@ -4,12 +4,9 @@
 \alias{radial_matrix_element}
 \title{Radial Matrix Element.}
 \usage{
-radial_matrix_element(k, n1, n2, l1, l2, j1, j2)
+radial_matrix_element(n1, n2, l1, l2, j1, j2, k = 1)
 }
 \arguments{
-\item{k}{A numeric. The power of r to be calculated over. To get a dipole
-matrix element, k must be equal to 1.}
-
 \item{n1}{A numeric. The principle quantum number of state 1.}
 
 \item{n2}{A numeric. The principle quantum number of state 2.}
@@ -21,6 +18,9 @@ matrix element, k must be equal to 1.}
 \item{j1}{A numeric. The total angular momentum number of state 1.}
 
 \item{j2}{A numeric. The total angular momentum number of state 2.}
+
+\item{k}{A numeric. The power of r to be calculated over. To get a dipole
+matrix element, k must be equal to 1. Default k = 1.}
 }
 \description{
 \code{radial_matrix_element} calculates the radial matrix element.
