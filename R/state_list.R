@@ -1,6 +1,3 @@
-#Function that outputs a matrix with the n, l, and j states for a given mj, and range of n's. Gives the full manifold for nmin to nmax. Also takes range of nmin-7 to nmin-1 and nmax+1 to nmax+7 and gives all of the low angular momentum states (l < 6) and adds those in as well.
-#Output takes the form n, l, j
-
 #' List of States for Stark Matrix.
 #'
 #' \code{state_list} creates a matrix containing the states to be calculated in
@@ -9,9 +6,20 @@
 #' This function outputs a matrix with the n, l, and j states for a given m_j
 #' and range of n's. It gives teh full manifold between nmin and max. It also
 #' returns the low angular momentum states (l < 6) for a range of nmin to
-#' n_add_min and nmax to n_add_max.
+#' n_add_min and nmax to n_add_max. If n_add_min or n_add_max are <= 0, then
+#' those sections will be ignored and no extra states will be added.
 #'
+#' The output takes the form of a matrix with columns n, l, and j.
 #'
+#' @param nmin A numeric. The minimum principle quantum number for the whole
+#' manifold
+#' @param nmax A numeric. THe maximum principle quantum number for the whole
+#' manifold
+#' @param mj A numeric. The magnetic momentum quantum number.
+#' @param n_add_min A numeric. The minimum principle quantum number for low
+#' angular momentum states.
+#' @param n_add_max A numeric. The maximum principle quantum number for low
+#' angular momentum states.
 state_list <- function(nmin, nmax, mj, n_add_min = 7, n_add_max = 7){
 
   #Populates a vector of n's in the range nmin to nmax.
