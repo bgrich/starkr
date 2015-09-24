@@ -1,6 +1,6 @@
-#' Zero Crossing
+#' Zero Crossing.
 #'
-#' \code{zero_cross} calculates the zero crossings for a pair of vectors x
+#' \code{zero_cross} calculates the zero crossings for a pair of vectors x.
 #' and y
 #'
 #' This function calculates the zero crossing for vectors x and y. The vector y
