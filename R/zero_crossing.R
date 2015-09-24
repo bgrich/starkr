@@ -35,6 +35,7 @@ zero_cross1 <- function(x, y){
 
 
 
+
 zero_cross2 <- function(x, y){
   #Initiates variables to hold the index and x position for the zero crossing.
   ZeroPos <- numeric()
@@ -42,15 +43,25 @@ zero_cross2 <- function(x, y){
 
   vector_sign <- sign(y)
 
-  zero_pos <- which(vector_sign == 0)
+  zeros <- which(vector_sign == 0)
 
   difference_vector <- diff(vector_sign)
 
   positive_cross <- which(difference_vector == 2)
   negative_cross <- which(difference_vector == -2)
 
-  ZeroPos <- c(zero_pos, positive_cross, negative_cross)
-  ZeroX <- c(x[zero_pos], x[positive_cross], x[negative_cross])
+  cross <- c(positive_cross, negative_cross)
+
+  for(i in 1:length(cross)){
+    if(abs(y[cross[i]]) > abs(y[cross[i]+1])){
+      ZeroPos <- c(ZeroPos, cross[i]+1)
+    } else {
+      ZeroPos <- c(ZeroPos, cross[i])
+    }
+  }
+
+  ZeroPos <- c(ZeroPos, zeros)
+  ZeroX <- x[ZeroPos]
 
   #If there are no zero crossings a message is printed. Otherwise, a matrix is sent out with the index and x position of each zero crossing.
   if(length(ZeroPos) == 0){
