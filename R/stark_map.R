@@ -5,7 +5,7 @@
 #'
 #' This function takes vectors for n, l, and j and returns a matrix with the
 #' energies for those n, l, and j states on the diagonal. To create the
-#' vectors for n, l, and j,\code{\link{state_list}} should be used. This will
+#' vectors for n, l, and j, \code{\link{state_list}} should be used. This will
 #' create a matrix with all the combinations of n, l, and j needed to create
 #' the Stark matrix. The energy is determined by:
 #' \deqn{E = -1 / (2* (n - \delta(n, l, j))^2)}
