@@ -1,4 +1,15 @@
-#Determines the location of zero crossings for two arbitrary vectors. The vector y is the vector whose zero crossing are being measured. The vector x is an associated position vector for y.
+#' Zero Crossing
+#'
+#' \code{zero_cross} calculates the zero crossings for a pair of vectors x
+#' and y
+#'
+#' This function calculates the zero crossing for vectors x and y. The vector y
+#' is the dependent variable and the vector x is the indepdenent variable.
+#'
+#' @param x A numeric. The independent variable. An associated position or time
+#' vector to y.
+#' @param y A numeric. The dependent variable. Typically a signal or function
+#' of the independent variable x.
 zero_cross <- function(x, y){
   # Initiates variables to hold the index and x position for the zero crossing.
   ZeroPos <- numeric()
@@ -31,7 +42,8 @@ zero_cross <- function(x, y){
   ZeroPos <- c(ZeroPos, zeros)
   ZeroX <- x[ZeroPos]
 
-  # If there are no zero crossings a message is printed. Otherwise, a matrix is sent out with the index and x position of each zero crossing.
+  # If there are no zero crossings a message is printed. Otherwise, a matrix is
+  # sent out with the index and x position of each zero crossing.
   if(length(ZeroPos) == 0){
     print("This vector contains no zero crossings.")
   } else {
