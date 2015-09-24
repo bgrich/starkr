@@ -9,7 +9,7 @@
 #' create a matrix with all the combinations of n, l, and j needed to create
 #' the Stark matrix. The energy is determined by:
 #' \deqn{E = -1 / (2* (n - \delta(n, l, j))^2)}
-#' where \eqn{\delta(n, l, j)} is determined by \code{\link{quantum_defect}}
+#' where \eqn{\delta(n, l, j)} is determined by \code{\link{quantum_defect}}.
 #'
 #' @param n A numeric. A vector that contains a series of principle quantum
 #' numbers.
@@ -41,7 +41,7 @@ zero_field_energy_mat <- function(n, l, j){
 #' This will create a matrix with all the combinations of n, l, and j needed to
 #' create the Stark matrix. The energy is determined by: \deqn{E = -1 / (2* (n -
 #' \delta(n, l, j))^2)} where \eqn{\delta(n, l, j)} is determined by
-#' \code{\link{quantum_defect}}
+#' \code{\link{quantum_defect}}.
 #'
 #' @param n A numeric. A vector that contains a series of principle quantum
 #'   numbers.
