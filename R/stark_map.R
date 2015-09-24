@@ -30,7 +30,27 @@ zero_field_energy_mat <- function(n, l, j){
 
 }
 
-
+#' Construct Zero Field Energy Data Frame.
+#'
+#' \code{zero_field_energy_df} constructs a data frame with the zero field
+#' energies and information about the states.
+#'
+#' This function takes vectors for n, l, j, and a single number mj and returns a
+#' matrix with the energies for those (n, l, j, mj) states on the diagonal. To
+#' create the vectors for n, l, and j, \code{\link{state_list}} should be used.
+#' This will create a matrix with all the combinations of n, l, and j needed to
+#' create the Stark matrix. The energy is determined by: \deqn{E = -1 / (2* (n -
+#' \delta(n, l, j))^2)} where \eqn{\delta(n, l, j)} is determined by
+#' \code{\link{quantum_defect}}
+#'
+#' @param n A numeric. A vector that contains a series of principle quantum
+#'   numbers.
+#' @param l A numeric. A vector that contains a series of orbital angular
+#'   momentum quantum numbers.
+#' @param j A numeric. A vector that contains a series of total angular momentum
+#'   quantum numbers.
+#' @param mj A numeric. A single number that represents the magnetic momentum
+#'   quantum number.
 zero_field_energy_df <- function(n, l, j, mj){
 
   # Initializes a data frame to hold the zero field energy and information
