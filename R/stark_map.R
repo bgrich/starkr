@@ -78,22 +78,27 @@ zero_field_energy_df <- function(n, l, j, mj){
 #' quantum numbers to be used in building the Stark matrix. These vectors can
 #' be obtained using \code{\link{state_list}} and are the columns of its
 #' result. Only one value of mj should be provided as the Stark matricies
-#' are mj independent.
+#' are mj independent. The Stark matrix is treated as symmetric and is only
+#' computed for the uper right triangle of the matrix. Copies of those
+#' elements are made in to their symmetric counterparts on the lower left
+#' trinagle of the matrix.
 #'
 #' @param n A numeric. The vector of principle quantum numbers.
 #' @param l A numeric. The vector of orbital angular momentum quantum numbers.
 #' @param j A numeric. The vector of total angular momentum quantum numbers.
 #' @param mj A numeric. The magnetic momentum quantum number.
 stark_matrix <- function(n, l, j, mj){
+
   #Initializes and computes the Stark Matrix
+
   StarkMatrix <- matrix(, nrow = length(n), ncol = length(n))
   #Fills the Stark matrix. Treats the Stark matrix as symmetric and computes only the elements for the upper right triangle of the matrix. Copies those into the symmetric terms on the lower left triangle of the matrix.
   for(i in 1:length(n)){
-    for(k in i:length(n)){
-      StarkMatrix[i, k] <- StarkMatrixElem(n[i], n[k], l[i], l[k], j[i], j[k], mj, mj)
-      StarkMatrix[k, i] <- StarkMatrix[i,k]
-      # print(paste("i = ", i, ", k = ", k, sep = ''))
-    }
     print(paste("Current row being processed: ", i, sep = ""))
+    for(k in i:length(n)){
+      StarkMatrix[i, k] <- stark_matrix_elem(n[i], n[k], l[i], l[k], j[i], j[k], mj, mj)
+      StarkMatrix[k, i] <- StarkMatrix[i,k]
+    }
   }
+  StarkMatrix
 }
