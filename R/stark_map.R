@@ -68,3 +68,17 @@ zero_field_energy_df <- function(n, l, j, mj){
 
   Energy_df
 }
+
+stark_matrix <- function(n, l, j, mj){
+  #Initializes and computes the Stark Matrix
+  StarkMatrix <- matrix(, nrow = length(n), ncol = length(n))
+  #Fills the Stark matrix. Treats the Stark matrix as symmetric and computes only the elements for the upper right triangle of the matrix. Copies those into the symmetric terms on the lower left triangle of the matrix.
+  for(i in 1:length(n)){
+    for(k in i:length(n)){
+      StarkMatrix[i, k] <- StarkMatrixElem(n[i], n[k], l[i], l[k], j[i], j[k], mj, mj)
+      StarkMatrix[k, i] <- StarkMatrix[i,k]
+      # print(paste("i = ", i, ", k = ", k, sep = ''))
+    }
+    print(paste("Current row being processed: ", i, sep = ""))
+  }
+}
