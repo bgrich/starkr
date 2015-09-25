@@ -69,6 +69,21 @@ zero_field_energy_df <- function(n, l, j, mj){
   Energy_df
 }
 
+#' Builds a Stark Matrix.
+#'
+#' \code{stark_matrix} builds a Stark matrix.
+#'
+#' This function builds a Stark matrix to be used in the creation of a Stark
+#' map. The function accepts vectors n, l, and j that describe all of the
+#' quantum numbers to be used in building the Stark matrix. These vectors can
+#' be obtained using \code{\link{state_list}} and are the columns of its
+#' result. Only one value of mj should be provided as the Stark matricies
+#' are mj independent.
+#'
+#' @param n A numeric. The vector of principle quantum numbers.
+#' @param l A numeric. The vector of orbital angular momentum quantum numbers.
+#' @param j A numeric. The vector of total angular momentum quantum numbers.
+#' @param mj A numeric. The magnetic momentum quantum number.
 stark_matrix <- function(n, l, j, mj){
   #Initializes and computes the Stark Matrix
   StarkMatrix <- matrix(, nrow = length(n), ncol = length(n))
