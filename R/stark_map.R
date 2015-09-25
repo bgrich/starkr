@@ -148,6 +148,23 @@ stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step
 }
 
 
+#' Tidy Stark Energy Data Frame.
+#'
+#' \code{tidy_stark_energy} creates a tidy data frame of the Stark energy
+#'
+#' This function creates a tidy data frame of the Stark energy. The zero energy
+#' data frame is provided by the function \code{\link{zero_field_energy_df}}.
+#' The Stark energy matrix is provided by the function
+#' \code{\link{stark_eigen}}. The field_min, field_max, and step_size should
+#' be set to same values as when \code{stark_eigen} was run.
+#'
+#' @param zero_frame A data frame that contains the zero electric field
+#' energies and state information.
+#' @param stark_energy A matrix that contains the eigen energies for the
+#' states in the columns and the field levels in the rows.
+#' @param field_min A numeric that sets the mininum of the electric field.
+#' @param field_max A numeric that sets the maximum of the electric field.
+#' @param step_size A numeric that sets the step size of the electric field.
 tidy_stark_energy <- function(zero_frame, stark_energy, field_min, field_max, step_size){
   field <- seq(field_min, field_max, by = step_size)
 
