@@ -92,7 +92,11 @@ stark_matrix <- function(n, l, j, mj){
   #Initializes and computes the Stark Matrix
 
   StarkMatrix <- matrix(, nrow = length(n), ncol = length(n))
-  #Fills the Stark matrix. Treats the Stark matrix as symmetric and computes only the elements for the upper right triangle of the matrix. Copies those into the symmetric terms on the lower left triangle of the matrix.
+
+  #Fills the Stark matrix. Treats the Stark matrix as symmetric and computes
+  #only the elements for the upper right triangle of the matrix. Copies those
+  #into the symmetric terms on the lower left triangle of the matrix.
+
   for(i in 1:length(n)){
     print(paste("Current row being processed: ", i, sep = ""))
     for(k in i:length(n)){
@@ -100,5 +104,7 @@ stark_matrix <- function(n, l, j, mj){
       StarkMatrix[k, i] <- StarkMatrix[i,k]
     }
   }
+
   StarkMatrix
+
 }
