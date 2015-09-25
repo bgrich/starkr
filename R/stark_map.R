@@ -146,3 +146,24 @@ stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step
   Energy
 
 }
+
+
+tidy_stark_energy <- function(zero_frame, stark_energy){
+  #Turns the data frame in to a dplyr table.
+  ZeroEnergyDataFrame <- tbl_df(ZeroEnergyDataFrame)
+
+  #Determines which direction the Energy eigenvalues are going and arranges the zero energy data frame to match. If the minimum zero field energy is the last column, then the Zero Field data frame is put in descending order. If the min zero field energy is the first column, then the Zero Field data frame is put in ascending order.
+  if(which.min(Energy[1,])>1){
+    ZeroFieldDataFrame <- ZeroEnergyDataFrame%>%arrange(desc(E0), desc(l))
+  } else{
+    ZeroFieldDataFrame <- ZeroEnergyDataFrame%>%arrange(E0, l)
+  }
+
+  EnergyDataFrame <- data.frame(Field = numeric(), E = numeric(), E0 = numeric(), n = numeric(), l = numeric(), j = numeric(), mj = numeric(), state = character())
+
+  #Creates a tidy data frame of the Energy eigen states at all fields
+  for(k in 1:length(Energy[1,])){
+    EnergyDataFrame.newPiece <- tbl_df(data.frame(Field = field, E = Energy[,k],E0 = ZeroFieldDataFrame$E0[k], n = ZeroFieldDataFrame$n[k], l = ZeroFieldDataFrame$l[k], j = ZeroFieldDataFrame$j[k], mj = ZeroFieldDataFrame$mj[k], state = ZeroFieldDataFrame$state[k]))
+    EnergyDataFrame <- rbind(EnergyDataFrame, EnergyDataFrame.newPiece)
+  }
+}
