@@ -110,7 +110,26 @@ stark_matrix <- function(n, l, j, mj){
 }
 
 
-stark_diag <- function(stark_matrix, zero_field_mat, field_min, field_max, step_size){
+#' Eigenvalues of the Stark Matrix.
+#'
+#' \code{stark_diag} calculates the eigenvalues of the Stark matrix for a
+#' sequence of electric field sizes.
+#'
+#' This function calculates the eigenvalues of the sum of the the zero electric
+#' field matrix and the Stark matrix times the electric field. The eigenvalues
+#' are output as a matrix with the different states as the columns and each
+#' field step as the rows. The columns are in descending order and the rows
+#' are in the initial state order of the zero electric field matrix and Stark
+#' matrix.
+#'
+#' @param stark_matrix A matrix created using the function
+#'   \code{\link{stark_matrix}}
+#' @param zero_field_mat A matrix created using the function
+#'   \code{\link{zero_field_energy_mat}}.
+#' @param field_min A numeric that sets the mininum of the electric field.
+#' @param field_max A numeric that sets the maximum of the electric field.
+#' @param step_size A numeric that sets the step size of the electric field
+stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step_size){
 
   #Determines the number of electric field points and the step size.
   field <- seq(field_min, field_max, by = step_size)
