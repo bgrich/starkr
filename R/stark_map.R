@@ -131,14 +131,15 @@ stark_matrix <- function(n, l, j, mj){
 #' @param step_size A numeric that sets the step size of the electric field
 stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step_size){
 
-  #Determines the number of electric field points and the step size.
+  # Determines the number of electric field points and the step size.
   field <- seq(field_min, field_max, by = step_size)
-  field.au <- field/5.142e9
+  field.au <- field / 5.142e9
   Energy <- numeric()
 
-  #Diagonalizes a matrix of the zero field energy + the Stark matrix times the electric field. Also builds a matrix of the eigenvalues
+  # Diagonalizes a matrix of the zero field energy + the Stark matrix times the
+  # electric field. Also builds a matrix of the eigenvalues
   for(k in 1:length(field)){
-    new_row <- eigen(zero_field_mat+stark_matrix*field.au[k])$values
+    new_row <- eigen(zero_field_mat + stark_matrix * field.au[k])$values
     Energy <- rbind(Energy, new_row)
   }
 
