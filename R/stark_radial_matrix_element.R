@@ -40,14 +40,27 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   zero_field_energy <- matrix(0,nrow = size, ncol = size)
 
   # Initializes the zero-field data frame
-  zero_field_frame <- data.frame(E0 = numeric(), n = numeric(), l = numeric(), j = numeric(), mj = numeric(), state = character())
+  zero_field_frame <- data.frame(E0 = numeric(),
+                                 n = numeric(),
+                                 l = numeric(),
+                                 j = numeric(),
+                                 mj = numeric(),
+                                 state = character())
 
   # Builds the zero-field matrix and data frame
   for(i in 1:size){
 
     zero_field_energy[i, i] <- -1 / (number_matrix[i, 1]- QuantumDefect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2
 
-    new_Row <- data.frame(E0 = -1 / (number_matrix[i, 1]- QuantumDefect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2, n = number_matrix[i, 1], l = number_matrix[i, 2], j = number_matrix[i, 3], mj = final_state_num[4], state = paste(number_matrix[i, 1], number_matrix[i, 2], number_matrix[i, 3], final_state_num[4], sep = ','))
+    new_Row <- data.frame(E0 = -1 / (number_matrix[i, 1] - QuantumDefect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2,
+                          n = number_matrix[i, 1],
+                          l = number_matrix[i, 2],
+                          j = number_matrix[i, 3],
+                          mj = final_state_num[4],
+                          state = paste(number_matrix[i, 1],
+                                        number_matrix[i, 2],
+                                        number_matrix[i, 3],
+                                        final_state_num[4], sep = ','))
 
     zero_field_frame <- rbind(zero_field_frame, new_Row)
   }
@@ -90,7 +103,10 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   unordered_data_frame <- unordered_data_frame %>%
     group_by(index)%>%
     mutate(charstates = strsplit(as.character(state), split = ","))%>%
-    mutate(n1 = as.numeric(unlist(charstates)[1]), l1 = as.numeric(unlist(charstates)[2]), j1 = as.numeric(unlist(charstates)[3]), mj1 = as.numeric(unlist(charstates)[4]))%>%
+    mutate(n1 = as.numeric(unlist(charstates)[1]),
+           l1 = as.numeric(unlist(charstates)[2]),
+           j1 = as.numeric(unlist(charstates)[3]),
+           mj1 = as.numeric(unlist(charstates)[4]))%>%
     ungroup()
 
   # Matches states with the l +/- 1 states of the initial state
@@ -101,7 +117,13 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   # Determines the matrix element for each possible state and sums them
   matrix_elem <- numeric()
   for(i in 1:length(state_index$index)){
-    rad_mat_elem <- radial_matrix_element(initial_state_num[1], unordered_data_frame$n1[state_index$index[i]], initial_state_num[2], unordered_data_frame$l1[state_index$index[i]], initial_state_num[3], final_state_num[3], 1)
+    rad_mat_elem <- radial_matrix_element(initial_state_num[1],
+                                          unordered_data_frame$n1[state_index$index[i]],
+                                          initial_state_num[2],
+                                          unordered_data_frame$l1[state_index$index[i]],
+                                          initial_state_num[3],
+                                          final_state_num[3],
+                                          1)
 
     matrix_elem <- c(matrix_elem, rad_mat_elem * stark_vector[state_index$index[i]])
   }
