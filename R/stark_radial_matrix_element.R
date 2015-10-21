@@ -22,7 +22,8 @@
 #' of the Stark matrix.
 #' @param n_max A numeric giving the maximum n used in determining the size
 #' of the Stark matrix.
-stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, n_min, n_max){
+#' @param ... Additional parameters to be sent to other functions.
+stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, n_min, n_max, ...){
 
   # Converts the field to atomic units
   field_au <- field/5.142e9
@@ -32,7 +33,7 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   final_state_num <- as.numeric(unlist(strsplit(stark_state, split = ",")))
 
   # Creates the number matrix and sets the size
-  number_matrix <- NumMat(n_min, n_max, final_state_num[4])
+  number_matrix <- state_list(n_min, n_max, final_state_num[4])
   size <- nrow(number_matrix)
 
   # Initializes the zero-field energy matrix
