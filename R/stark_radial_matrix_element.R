@@ -101,7 +101,7 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   # Determines the matrix element for each possible state and sums them
   matrix_elem <- numeric()
   for(i in 1:length(state_index$index)){
-    rad_mat_elem <- RadialMatrixElement(1, initial_state_num[1], unordered_data_frame$n1[state_index$index[i]], initial_state_num[2], unordered_data_frame$l1[state_index$index[i]], initial_state_num[3], final_state_num[3])
+    rad_mat_elem <- radial_matrix_element(initial_state_num[1], unordered_data_frame$n1[state_index$index[i]], initial_state_num[2], unordered_data_frame$l1[state_index$index[i]], initial_state_num[3], final_state_num[3], 1)
 
     matrix_elem <- c(matrix_elem, rad_mat_elem * stark_vector[state_index$index[i]])
   }
