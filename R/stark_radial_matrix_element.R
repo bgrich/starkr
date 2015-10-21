@@ -1,6 +1,27 @@
-
-# Calculates the radial matrix element for a given initial state and an arbitrary
-# stark state related to some zero field state at an arbitrary field
+#' Calculate Radial Matrix Elements Involving Stark States.
+#'
+#' \code{stark_radial_mat_elem} calculates the radial matrix element between
+#' a given initial state and a Stark state.
+#'
+#' This function calculates the radial matrix elements between a given initial
+#' state and a Stark state at some arbitrary field F. The Stark state that is
+#' given as input is the state that a particular line would correspond with at
+#' zero field. The Stark matrix required for the function is produced by
+#' \code{\link{stark_matrix}} and must correspond to the provided n_min and
+#' n_max.
+#'
+#' @param stark_mat A matrix that is produced using \code{\link{stark_matrix}}
+#' that must correspond to n_min and m_max.
+#' @param initial_state A character representing the initial state in the form
+#' "n,l,j,m_j".
+#' @param stark_state A character representing the state at zero field that
+#' corresponds to the Stark state and has the form "n,l,j,m_j".
+#' @param field A numeric representing the field strength at which the Stark
+#' state is evaluated.
+#' @param n_min A numeric giving the minimum n used in determining the size
+#' of the Stark matrix.
+#' @param n_max A numeric giving the maximum n used in determining the size
+#' of the Stark matrix.
 stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, n_min, n_max){
 
   # Converts the field to atomic units
