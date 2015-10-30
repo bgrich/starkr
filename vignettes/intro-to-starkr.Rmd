@@ -54,6 +54,8 @@ Clebsch-Gordan coefficient.
 [Insert Examples]
 
 ### Spherical Matrix Element
+`sphere_mat_element()` calculates the spherical matrix element
+$<l, m|\cos{\theta}|l', m>$ based on the form given by @Zimmerman1979.
 
 ### Radial Matrix Element
 
