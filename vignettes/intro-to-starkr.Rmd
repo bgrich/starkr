@@ -21,6 +21,26 @@ atoms. The code described below is broken up in to several sections:
 * Data tidying to create an easier to view and manipulate Stark map.
 * Analysis of Stark states at particular field values.
 
+## Components of the Stark matrix element
+All of the functions that calcuate the underlying pieces of the Stark matrix 
+element may be used independently of the Stark matrix element calculation.
+
+### Quantum Defect
+`quantum_defect()` calculates the quantum defect of an arbitrary (n, l, j) 
+state of Rubidium-85. The quantum defect is calculated using a modified version 
+of equation (16.19) from [_insert Gallagher Rydberg Atoms reference_] pg. 351. 
+
+$$\delta_{n, l, j} = \delta_{0} + \frac{\delta_{2}}{(n - \delta_{0})^{2}}$$
+
+The parameters $\delta_{0}$ and $\delta_{2}$ are experimentally measured values 
+from the following papers [_insert Refereneces_].
+
+### Clebsch-Gordan Coefficients and Wigner-3j Symbols
+
+### Spherical Matrix Element
+
+### Radial Matrix Element
+
 ## Vignette Info
 
 Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
