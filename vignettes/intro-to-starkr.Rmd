@@ -58,6 +58,11 @@ Clebsch-Gordan coefficient.
 $<l, m|\cos{\theta}|l', m>$ based on the form given by @Zimmerman1979.
 
 ### Radial Matrix Element
+`radial_matrix_element()` calculates the radial matrix element 
+$<n, l|r|n', l'>$ for arbitrary quantum numbers n, n', l, and l'. The 
+calculation is done using a Numerov algorithm as used by @Zimmerman1979 (see 
+Appendix A). This calculation uses the square-root scaling done by @Bhatti1981 
+where $\xi = \sqrt{r}$ and $\Psi = r^{3/4} R(r)$.
 
 ## Vignette Info
 
