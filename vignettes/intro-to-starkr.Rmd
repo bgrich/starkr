@@ -47,6 +47,10 @@ be found in Edmonds [_insert reference_] or Lindgren and Morrison
 [_insert Reference_]. The second is `clebsch_gordan2()` which uses an analytic 
 form found in Cromwell's _Group Theory of Physics_ [_insert Reference_].
 
+`wigner_3j()` is provided for completeness and is not actually used in the 
+calculation of the Stark matrix element. It is calculated using the 
+Clebsch-Gordan coefficient. 
+
 [Insert Examples]
 
 ### Spherical Matrix Element
