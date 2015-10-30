@@ -13,7 +13,13 @@ vignette: >
 The starkr package is designed to calculate the Stark matrix and Stark maps 
 for Rubidium-85. The code relies heavily on techniques and algorithms used by 
 [@Zimmerman1979] in their paper analyzing the Stark structure of alkali-metal 
-atoms. 
+atoms. The code described below is broken up in to several sections:
+
+* The underlying structure of the Stark matrix elements.
+* Creating the Stark matrix elements and Stark matrix.
+* Diagonalizing the Stark matrix to create a Stark map.
+* Data tidying to create an easier to view and manipulate Stark map.
+* Analysis of Stark states at particular field values.
 
 ## Vignette Info
 
