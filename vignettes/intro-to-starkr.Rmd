@@ -3,6 +3,7 @@ title: "Introduction to starkr"
 author: "Brian Richards"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
+bibliography: bibliography.bib
 vignette: >
   %\VignetteIndexEntry{Introduction to starkr}
   %\VignetteEngine{knitr::rmarkdown}
@@ -11,8 +12,8 @@ vignette: >
 
 The starkr package is designed to calculate the Stark matrix and Stark maps 
 for Rubidium-85. The code relies heavily on techniques and algorithms used by 
-Zimmerman et al (_enter reference_) in their paper analyzing the Stark 
-structure of alkali-metal atoms.
+[@Zimmerman1979] in their paper analyzing the Stark structure of alkali-metal 
+atoms. 
 
 ## Vignette Info
 
