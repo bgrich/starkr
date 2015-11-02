@@ -73,7 +73,23 @@ elements in to the appropriate spot in the matrix.
 
 ### Stark Matrix Elements
 
+The elements of the Stark matrix are calculated using `stark_matrix_elem()`. 
+`stark_matrix_elem()` is based on equation 10 from @Zimmerman1979. It requires 
+the full $(n, l, j, m_{j})$ of quantum numbers for both the initial and final 
+states. Equation 10 from @Zimmerman1979 is reproduced below:
 
+$$<W, l, j, m_{j}|Fz|W', l', j', m_{j}'>$$ 
+$$= \delta(m_{j}, m_{j}') \delta(l, l'\pm 1) <W, l| r |W', l'>F$$
+$$\times \sum_{m_{l} = m_{j} \pm \frac{1}{2}} 
+<l, \frac{1}{2}, m_{l}, m_{j} - m_{l}|j, m_{j}>
+<l', \frac{1}{2}, m_{l}, m_{j} - m_{l}|j, m_{j}>
+<l, m_{l}|\cos{\theta}|l', m_{l}>$$
+
+where W and W' are the energies of the initial and final states respectively 
+and F is the applied electric field. The energy is $W = -1/2(n - \delta)^{2}$ 
+where $\delta$ is the quantum defect for state $(n, l, j, m_{j})$. The Stark 
+matrix element will be equal to zero unless it fulfills the requirement that 
+$m_{j} = m_{j}'$ and $l = l' \pm 1$. 
 
 ## Styles
 
