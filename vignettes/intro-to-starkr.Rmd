@@ -101,7 +101,7 @@ least $n \pm 4$. To build the list of states you plan on including in the
 Stark matrix, the function `state_list()` can be used. `state_list()` creates 
 a matrix with columns n, l, and j and these columns contain all of the possible 
 n, l, j combinations for a given $m_{j}$. For example, if looking at the 
-states for the n = 3, $m_{j} = \frac{1}{2}$ manifold you would get:
+states for the $n = 3$, $m_{j} = \frac{1}{2}$ manifold you would get:
 ```{r}
 starkr::state_list(3, 3, 1/2, 0, 0)
 ```
@@ -113,6 +113,9 @@ for nmin - 1 and nmin - 2. `n_add_max` is treated similarly, but on the higher
 n side. These additional states allow for the states that have the highest 
 impact on the Stark map without adding too much computational load by inclding 
 the full manifolds at those n's. 
+
+Note: Because the different $m_{j}$ states do not interact, you will need to 
+compute the state list and Stark matrix separately for each $m_{j}$.
 
 ## Styles
 
