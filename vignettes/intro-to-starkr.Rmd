@@ -64,9 +64,16 @@ calculation is done using a Numerov algorithm as used by @Zimmerman1979 (see
 Appendix A). This calculation uses the square-root scaling done by @Bhatti1981 
 where $\xi = \sqrt{r}$ and $\Psi = r^{3/4} R(r)$.
 
-## Vignette Info
+## Calculating and Building the Stark Matrix
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+Computing the elements of the Stark matrix and building said matrix requires 
+a few additional functions to work together. First, we have to compute the 
+individual elements of the Stark matrix. Then we have to put all of those 
+elements in to the appropriate spot in the matrix.
+
+### Stark Matrix Elements
+
+
 
 ## Styles
 
