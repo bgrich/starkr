@@ -89,7 +89,30 @@ where W and W' are the energies of the initial and final states respectively
 and F is the applied electric field. The energy is $W = -1/2(n - \delta)^{2}$ 
 where $\delta$ is the quantum defect for state $(n, l, j, m_{j})$. The Stark 
 matrix element will be equal to zero unless it fulfills the requirement that 
-$m_{j} = m_{j}'$ and $l = l' \pm 1$. 
+$m_{j} = m_{j}'$ and $l = l' \pm 1$.
+
+### Building the Stark Matrix
+
+There are still a few pieces left before you will be able to build the Stark 
+matrix. To properly calculate the Stark map for a given set of states, you 
+need to include a large number of states of both higher and lower energies. 
+The suggestion from @Zimmerman1979 is to include the full manifolds for at 
+least $n \pm 4$. To build the list of states you plan on including in the 
+Stark matrix, the function `state_list()` can be used. `state_list()` creates 
+a matrix with columns n, l, and j and these columns contain all of the possible 
+n, l, j combinations for a given $m_{j}$. For example, if looking at the 
+states for the n = 3, $m_{j} = \frac{1}{2}$ manifold you would get:
+```{r}
+starkr::state_list(3, 3, 1/2, 0, 0)
+```
+
+There are some additional paramters in `state_list()` that allow for the 
+addition of lower angular momentum states. For example, if `n_add_min` is set 
+to 2, then all of the low angular momentum states ($l < 6$) would be included 
+for nmin - 1 and nmin - 2. `n_add_max` is treated similarly, but on the higher 
+n side. These additional states allow for the states that have the highest 
+impact on the Stark map without adding too much computational load by inclding 
+the full manifolds at those n's. 
 
 ## Styles
 
