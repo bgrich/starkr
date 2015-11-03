@@ -117,6 +117,8 @@ the full manifolds at those n's.
 Note: Because the different $m_{j}$ states do not interact, you will need to 
 compute the state list and Stark matrix separately for each $m_{j}$.
 
+
+
 ## Styles
 
 The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
