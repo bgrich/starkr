@@ -102,7 +102,7 @@ Stark matrix, the function `state_list()` can be used. `state_list()` creates
 a matrix with columns n, l, and j and these columns contain all of the possible 
 n, l, j combinations for a given $m_{j}$. For example, if looking at the 
 states for the $n = 3$, $m_{j} = \frac{1}{2}$ manifold you would get:
-```{r}
+```{r states}
 starkr::state_list(3, 3, 1/2, 0, 0)
 ```
 
@@ -120,7 +120,7 @@ compute the state list and Stark matrix separately for each $m_{j}$.
 Once the state matrix has been calculated, the Stark matrix can be constructed. 
 For building the Stark matrix, you may find it useful to save the n, l, and j 
 columns of the state matrix into their own vectors.
-```{r}
+```{r state_vectors}
 states <- starkr::state_list(5, 5, 1/2, 0, 0)
 n <- states[, 1]
 l <- states[, 2]
@@ -130,14 +130,14 @@ m_j <- 1/2
 
 Now you are ready to construct the Stark matrix!
 
-```{r, results = "hide"}
+```{r stark_matrix_calc, results = "hide"}
 mat <- starkr::stark_matrix(n, l, j, m_j)
 ```
 
 Note that `stark_matrix()` will print the row that is currently being 
 processed with the message:
 
-```{r}
+```{r processing_comment}
 # Current row being processed: [i]
 ```
 
@@ -145,7 +145,7 @@ where [i] is the row number.
 
 The output of `stark_matrix()` will look like the following:
 
-```{r}
+```{r stark_mat_output}
 mat[1:4, 1:4]
 ```
 
