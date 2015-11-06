@@ -121,7 +121,7 @@ Once the state matrix has been calculated, the Stark matrix can be constructed.
 For building the Stark matrix, you may find it useful to save the n, l, and j 
 columns of the state matrix into their own vectors.
 ```{r}
-states <- starkr::state_list(3, 3, 1/2, 0, 0)
+states <- starkr::state_list(5, 5, 1/2, 0, 0)
 n <- states[, 1]
 l <- states[, 2]
 j <- states[, 3]
@@ -130,9 +130,18 @@ m_j <- 1/2
 
 Now you are ready to construct the Stark matrix!
 
-```{r}
-
+```{r, results = "hide"}
+mat <- starkr::stark_matrix(n, l, j, m_j)
 ```
+
+Note that `stark_matrix()` will print the row that is currently being 
+processed with the message:
+
+```{r}
+# Current row being processed: [i]
+```
+
+where [i] is the row number.
 
 ## Styles
 
