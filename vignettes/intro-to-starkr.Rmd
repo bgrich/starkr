@@ -117,7 +117,22 @@ the full manifolds at those n's.
 Note: Because the different $m_{j}$ states do not interact, you will need to 
 compute the state list and Stark matrix separately for each $m_{j}$.
 
+Once the state matrix has been calculated, the Stark matrix can be constructed. 
+For building the Stark matrix, you may find it useful to save the n, l, and j 
+columns of the state matrix into their own vectors.
+```{r}
+states <- starkr::state_list(3, 3, 1/2, 0, 0)
+n <- states[, 1]
+l <- states[, 2]
+j <- states[, 3]
+m_j <- 1/2
+```
 
+Now you are ready to construct the Stark matrix!
+
+```{r}
+
+```
 
 ## Styles
 
