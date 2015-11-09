@@ -153,3 +153,12 @@ where element [i, k] is the result of `stark_matrix_element()`:
 $<n_{i}, l_{i}, j_{i}, m_j| z | n_{k}, l_{k}, j_{k}, m_j>$.
 
 ## Diagonalizing the Stark Matrix
+
+To diagonalize the Stark matrix, you will need a few additional functions. The
+total matrix need find the eigenenergies and eigenstates of the system is a 
+matrix of zero field energies summed with the Stark matrix. The zero field 
+energy matrix is calculated using `zero_field_energy_mat()`. This function 
+takes the vector of n, l, and j values used in `stark_matrix()` and returns a 
+diagonal matrix with elements:
+
+$$W_{n, l, j} = \frac{1}{2(n - \delta_{n, l, j})^{2}}$$
