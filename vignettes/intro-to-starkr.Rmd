@@ -162,3 +162,16 @@ takes the vector of n, l, and j values used in `stark_matrix()` and returns a
 diagonal matrix with elements:
 
 $$W_{n, l, j} = \frac{1}{2(n - \delta_{n, l, j})^{2}}$$
+
+```{r}
+zero_energy_mat <- starkr::zero_field_energy_mat(n, l, j)
+zero_energy_mat[1:4, 1:4]
+```
+
+`stark_eigen()` diagonalizes the combined Stark matrix and zero field energy 
+matrix at a series of electric fields. A maximum field, a minimum field, and 
+a field step size in units of V/cm are provided as starting parameters. A 
+field vector is created spanning the maximum and minimum fields at the step 
+size. This function returns a matrix of energy eigenvalues in which the rows 
+are the different field steps and each columns corresponds to a different 
+starting state. 
