@@ -64,7 +64,7 @@ zero_field_energy_df <- function(n, l, j, mj){
     Energy_df <- rbind(Energy_df, new_row)
   }
   #Turns the data frame in to a dplyr table.
-  Energy_df <- tbl_df(Energy_df)
+  Energy_df <- dplyr::tbl_df(Energy_df)
 
   Energy_df
 }
