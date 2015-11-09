@@ -188,6 +188,6 @@ with all of the zero field energies. This function is similar to the matrix
 form in the previous section.
 
 ```{r}
-zero_df <- zero_field_energy_df(n, l, j, m_j)
+zero_df <- starkr::zero_field_energy_df(n, l, j, m_j)
 zero_df
 ```
