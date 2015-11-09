@@ -163,7 +163,7 @@ diagonal matrix with elements:
 
 $$W_{n, l, j} = \frac{1}{2(n - \delta_{n, l, j})^{2}}$$
 
-```{r}
+```{r zero_field_mat calc}
 zero_energy_mat <- starkr::zero_field_energy_mat(n, l, j)
 zero_energy_mat[1:4, 1:4]
 ```
@@ -174,7 +174,12 @@ a field step size in units of V/cm are provided as starting parameters. A
 field vector is created spanning the maximum and minimum fields at the step 
 size. This function returns a matrix of energy eigenvalues in which the rows 
 are the different field steps and each columns corresponds to a different 
-starting state. 
+starting state.
+
+```{r stark_map calc}
+stark_map <- starkr::stark_eigen(mat, zero_energy_mat, 0, 4, 0.5)
+stark_map[1:4, 1:4]
+```
 
 ## Tidying the Stark Map
 
@@ -187,7 +192,19 @@ First, you will need to use `zero_field_energy_df()` to create a data frame
 with all of the zero field energies. This function is similar to the matrix 
 form in the previous section.
 
-```{r}
+```{r zero_field df}
 zero_df <- starkr::zero_field_energy_df(n, l, j, m_j)
 zero_df
+```
+
+`tidy_stark_energy()` takes the zero field energy data frame and the Stark 
+energy matrix as starting arguments. The field minimum, field maximum, and 
+step size must be the same as used in `stark_eigen()`. `tidy_stark_energy()` 
+takes the zero field energy data frame and arranges the rows to match the 
+order of the columns in the Stark energy matrix. It then outputs a tidy data 
+frame with all of the energy and field values and matching $E_{0}$, $n$, $l$, 
+$j$, $m_{j}$, and a string representation of the state.
+
+```{r tidy df}
+# tidy_df <- starkr::tidy_stark_energy(zero_df, )
 ```
