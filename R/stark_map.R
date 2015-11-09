@@ -188,6 +188,8 @@ tidy_stark_energy <- function(zero_frame, stark_energy, field_min, field_max, st
     EnergyDataFrame <- rbind(EnergyDataFrame, new_chunk)
   }
 
+  EnergyDataFrame <- dplyr::tbl_df(EnergyDataFrame)
+
   EnergyDataFrame
 
 }
