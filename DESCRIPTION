@@ -14,5 +14,6 @@ BugReports: https://github.com/bgrich/starkr/issues
 License: GPL-3
 LazyData: TRUE
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    dplyr
 VignetteBuilder: knitr
