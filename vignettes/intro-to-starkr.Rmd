@@ -175,3 +175,19 @@ field vector is created spanning the maximum and minimum fields at the step
 size. This function returns a matrix of energy eigenvalues in which the rows 
 are the different field steps and each columns corresponds to a different 
 starting state. 
+
+## Tidying the Stark Map
+
+The output from `stark_eigen()` tends to be pretty messy and it can be hard to 
+determine which column corresponds to what zero field energy. To fix this, you 
+can use `tidy_stark_energy()` to put your eigen energies in to a form that is 
+easy to manipulate and plot. 
+
+First, you will need to use `zero_field_energy_df()` to create a data frame 
+with all of the zero field energies. This function is similar to the matrix 
+form in the previous section.
+
+```{r}
+zero_df <- zero_field_energy_df(n, l, j, m_j)
+zero_df
+```
