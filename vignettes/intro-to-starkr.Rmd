@@ -21,6 +21,10 @@ atoms. The code described below is broken up in to several sections:
 * Data tidying to create an easier to view and manipulate Stark map.
 * Analysis of Stark states at particular field values.
 
+```{r}
+library(starkr)
+```
+
 ## Components of the Stark matrix element
 All of the functions that calcuate the underlying pieces of the Stark matrix 
 element may be used independently of the Stark matrix element calculation.
@@ -206,5 +210,6 @@ frame with all of the energy and field values and matching $E_{0}$, $n$, $l$,
 $j$, $m_{j}$, and a string representation of the state.
 
 ```{r tidy df}
-# tidy_df <- starkr::tidy_stark_energy(zero_df, )
+tidy_df <- starkr::tidy_stark_energy(zero_df, stark_map, 0, 4, 0.5)
+tidy_df
 ```
