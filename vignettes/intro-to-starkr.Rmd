@@ -228,3 +228,16 @@ tidy_df %>%
 Now you have a Stark map!
 
 ## Radial Matrix Elements of Stark Eigenstates
+
+Now that you have created a Stark matrix and Stark map, you can use that 
+matrix to calculate the radial matrix element for some initial pure zero-field 
+state and a Stark state at arbitrary field. `stark_radial_mat_elem()` takes 
+the Stark matrix you made earlier, an initial state represented by a character, 
+and a Stark state also represented by a character and related to its equivalent 
+zero-field state. You will also need to provide the desired field strength, 
+the minimum and maximum n that matches your Stark matrix along with the 
+additional low angular momentum states included in your Stark matrix.
+
+```{r radial Stark state}
+stark_radial_mat_elem(mat, "5,1,1.5,1.5", "15,1,1.5,1.5", field = 10, n_min = 15, n_max = 15, n_add_min = 0, n_add_max = 0)
+```
