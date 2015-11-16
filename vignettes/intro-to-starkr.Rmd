@@ -23,6 +23,8 @@ atoms. The code described below is broken up in to several sections:
 
 ```{r}
 library(starkr)
+library(dplyr)
+library(ggplot2)
 ```
 
 ## Components of the Stark matrix element
@@ -125,7 +127,7 @@ Once the state matrix has been calculated, the Stark matrix can be constructed.
 For building the Stark matrix, you may find it useful to save the n, l, and j 
 columns of the state matrix into their own vectors.
 ```{r state_vectors}
-states <- starkr::state_list(5, 5, 1/2, 0, 0)
+states <- starkr::state_list(15, 15, 1/2, 0, 0)
 n <- states[, 1]
 l <- states[, 2]
 j <- states[, 3]
@@ -213,3 +215,16 @@ $j$, $m_{j}$, and a string representation of the state.
 tidy_df <- starkr::tidy_stark_energy(zero_df, stark_map, 0, 4, 0.5)
 tidy_df
 ```
+
+Once the data has been put in to a tidy format, it is very simple to plot it. 
+
+```{r tidy plot}
+tidy_df %>%
+  filter(l > 4) %>%
+  ggplot(aes(x = Field, y = E, group = state)) +
+  geom_line()
+```
+
+Now you have a Stark map!
+
+## Radial Matrix Elements of Stark Eigenstates
