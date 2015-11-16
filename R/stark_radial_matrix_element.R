@@ -23,7 +23,7 @@
 #' @param n_max A numeric giving the maximum n used in determining the size
 #' of the Stark matrix.
 #' @param ... Additional parameters to be sent to other functions.
-stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, n_min, n_max, ...){
+stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, n_min, n_max, n_add_min, n_add_max){
 
   # Converts the field to atomic units
   field_au <- field/5.142e9
