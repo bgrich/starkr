@@ -239,5 +239,5 @@ the minimum and maximum n that matches your Stark matrix along with the
 additional low angular momentum states included in your Stark matrix.
 
 ```{r radial Stark state}
-stark_radial_mat_elem(mat, "5,1,1.5,1.5", "15,1,1.5,1.5", field = 10, n_min = 15, n_max = 15, n_add_min = 0, n_add_max = 0)
+stark_radial_mat_elem(mat, "5,1,1.5,1.5", "15,1,1.5,0.5", field = 10, n_min = 15, n_max = 15, n_add_min = 0, n_add_max = 0)
 ```
