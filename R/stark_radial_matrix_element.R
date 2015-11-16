@@ -33,7 +33,7 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   final_state_num <- as.numeric(unlist(strsplit(stark_state, split = ",")))
 
   # Creates the number matrix and sets the size
-  number_matrix <- state_list(n_min, n_max, final_state_num[4])
+  number_matrix <- state_list(n_min, n_max, final_state_num[4], n_add_min, n_add_max)
   size <- nrow(number_matrix)
 
   # Initializes the zero-field energy matrix
