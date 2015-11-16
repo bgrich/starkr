@@ -50,9 +50,9 @@ stark_radial_mat_elem <- function(stark_mat, initial_state, stark_state, field, 
   # Builds the zero-field matrix and data frame
   for(i in 1:size){
 
-    zero_field_energy[i, i] <- -1 / (number_matrix[i, 1]- QuantumDefect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2
+    zero_field_energy[i, i] <- -1 / (number_matrix[i, 1]- quantum_defect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2
 
-    new_Row <- data.frame(E0 = -1 / (number_matrix[i, 1] - QuantumDefect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2,
+    new_Row <- data.frame(E0 = -1 / (number_matrix[i, 1] - quantum_defect(number_matrix[i, 1],  number_matrix[i, 2], number_matrix[i, 3])) ^ 2 / 2,
                           n = number_matrix[i, 1],
                           l = number_matrix[i, 2],
                           j = number_matrix[i, 3],
