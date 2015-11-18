@@ -1,6 +1,6 @@
 #' Radial Matrix Element.
 #'
-#' \code{radial_matrix_element} calculates the radial matrix element.
+#' \code{optim_radial_matrix_element} calculates the radial matrix element.
 #'
 #' This function calculates the radial matrix element for two arbitrary states
 #' (n1, l1, j1) and (n2, l2, j2). A Numerov algorithm is used to compute the
