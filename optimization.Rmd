@@ -39,3 +39,8 @@ with a look specifically at `radial_matrix_element()`.
 ```{r benchmark of rad mat elem}
 profvis(starkr::radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
 ```
+
+The bottleneck appears to be specifically in a line of code where a data frame 
+is produced. I think that this line is actually no longer used in the code and 
+is a left over from a previous iteration. A new version of the function called 
+`optim_radial_matrix_element()` has been created with that line commented out.
