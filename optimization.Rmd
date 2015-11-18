@@ -8,3 +8,34 @@ output: html_document
 # Optimizing the code in starkr
 
 Initial library calls
+```{r library calls}
+library(starkr)
+library(dplyr)
+library(ggplot2)
+library(profvis)
+```
+
+First I need to get a benchmark for how my functions run. Particularly, I want 
+to look at the speed at which `stark_matrix()` runs. I assume the bottleneck 
+is in `radial_matrix_element()`.
+
+```{r state call}
+states <- starkr::state_list(15, 15, 1/2, 0, 0)
+n <- states[, 1]
+l <- states[, 2]
+j <- states[, 3]
+m_j <- 1/2
+```
+
+```{r initial benchmark}
+profvis(starkr::stark_matrix(n, l, j, m_j))
+```
+
+The output from here looks like the vast majority of the bottleneck is in fact 
+in `radial_matrix_element()` with a small portion of the bottleneck going to 
+`clebsch_gordan()` and `sphere_mat_element()`. Now to dive in a little deeper 
+with a look specifically at `radial_matrix_element()`.
+
+```{r benchmark of rad mat elem}
+profvis(starkr::radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
+```
