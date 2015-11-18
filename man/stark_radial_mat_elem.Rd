@@ -5,7 +5,7 @@
 \title{Calculate Radial Matrix Elements Involving Stark States.}
 \usage{
 stark_radial_mat_elem(stark_mat, initial_state, stark_state, field, n_min,
-  n_max, ...)
+  n_max, n_add_min, n_add_max)
 }
 \arguments{
 \item{stark_mat}{A matrix that is produced using \code{\link{stark_matrix}}
