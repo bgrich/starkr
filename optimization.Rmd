@@ -13,6 +13,7 @@ library(starkr)
 library(dplyr)
 library(ggplot2)
 library(profvis)
+library(rbenchmark)
 ```
 
 First I need to get a benchmark for how my functions run. Particularly, I want 
@@ -44,3 +45,14 @@ The bottleneck appears to be specifically in a line of code where a data frame
 is produced. I think that this line is actually no longer used in the code and 
 is a left over from a previous iteration. A new version of the function called 
 `optim_radial_matrix_element()` has been created with that line commented out.
+
+```{r benchmark of optim rad mat elem}
+profvis(starkr::optim_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
+```
+
+Newly optimized function seems to give about a factor of 5 speedup.
+
+```{r function comparison}
+benchmark(radial_matrix_element(15, 15, 0, 1, 1/2, 1/2), optim_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
+```
+
