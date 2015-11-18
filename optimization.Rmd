@@ -35,10 +35,12 @@ profvis(starkr::stark_matrix(n, l, j, m_j))
 The output from here looks like the vast majority of the bottleneck is in fact 
 in `radial_matrix_element()` with a small portion of the bottleneck going to 
 `clebsch_gordan()` and `sphere_mat_element()`. Now to dive in a little deeper 
-with a look specifically at `radial_matrix_element()`.
+with a look specifically at `radial_matrix_element()`. I've created a separate 
+file for the original function that I am optimizing with old appendend to the 
+front.
 
 ```{r benchmark of rad mat elem}
-profvis(starkr::radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
+profvis(starkr::old_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
 ```
 
 The bottleneck appears to be specifically in a line of code where a data frame 
@@ -53,6 +55,15 @@ profvis(starkr::optim_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
 Newly optimized function seems to give about a factor of 5 speedup.
 
 ```{r function comparison}
-benchmark(radial_matrix_element(15, 15, 0, 1, 1/2, 1/2), optim_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
+benchmark(old_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2), optim_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2))
+```
+
+Quick double check to verify that the two functions still give the same answer.
+
+```{r equal test}
+a <- old_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2)
+b <- optim_radial_matrix_element(15, 15, 0, 1, 1/2, 1/2)
+
+a == b
 ```
 
