@@ -1,0 +1,10 @@
+---
+title: "starkr Optimizations"
+author: "Brian Richards"
+date: "November 18, 2015"
+output: html_document
+---
+
+# Optimizing the code in starkr
+
+Initial library calls
