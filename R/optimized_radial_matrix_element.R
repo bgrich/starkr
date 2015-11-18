@@ -17,7 +17,7 @@
 #' @param l2 A numeric. The orbital angular momentum number of state 2.
 #' @param j1 A numeric. The total angular momentum number of state 1.
 #' @param j2 A numeric. The total angular momentum number of state 2.
-radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
+optim_radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   # Number of Electrons
   Z <- 1
 
@@ -168,7 +168,7 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
       N1_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi1_iplus1 ^ 2 * h
       N2_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi2_iplus1 ^ 2 * h
 
-      new.row <- data.frame(ksi = ksi_iplus1, Psi1 = Psi1_iplus1, Psi2 = Psi2_iplus1, N1_i = N1_iplus1, N2_i=N2_iplus1, Psi12 = Psi12_iplus1)
+      # new.row <- data.frame(ksi = ksi_iplus1, Psi1 = Psi1_iplus1, Psi2 = Psi2_iplus1, N1_i = N1_iplus1, N2_i=N2_iplus1, Psi12 = Psi12_iplus1)
 
       if(ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)){
         break
