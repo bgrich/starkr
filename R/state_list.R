@@ -52,7 +52,7 @@ state_list <- function(nmin, nmax, mj, n_add_min = 7, n_add_max = 7){
     } else if(n_add_max <= 0){
       nadd <- c(n_add_min:(nmin-1))
     } else {
-      nadd <- c((nmin - n_add_min):(nmin-1),(nmax+1):(nmaxx + n_add_max))
+      nadd <- c((nmin - n_add_min):(nmin-1),(nmax+1):(nmax + n_add_max))
     }
 
     for(i in 1:length(nadd)){
