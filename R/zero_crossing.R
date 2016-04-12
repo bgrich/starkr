@@ -31,28 +31,33 @@ zero_cross <- function(x, y){
   cross <- c(positive_cross, negative_cross)
 
   # Looks at the zero crossings and determines which one is closest to zero
-  for(i in 1:length(cross)){
-    if(abs(y[cross[i]]) > abs(y[cross[i]+1])){
-      ZeroPos <- c(ZeroPos, cross[i]+1)
-    } else {
-      ZeroPos <- c(ZeroPos, cross[i])
-    }
-  }
 
-  ZeroPos <- c(ZeroPos, zeros)
-  ZeroX <- x[ZeroPos]
-
-  # If there are no zero crossings a message is printed. Otherwise, a matrix is
-  # sent out with the index and x position of each zero crossing.
-  if(length(ZeroPos) == 0){
+  if (length(cross) == 0) {
     print("This vector contains no zero crossings.")
   } else {
-    OutputMatrix <- cbind(ZeroPos, ZeroX)
-    colnames(OutputMatrix) <- c("Index", "X.position")
-    OutputMatrix
+    for(i in 1:length(cross)){
+      if(abs(y[cross[i]]) > abs(y[cross[i]+1])){
+        ZeroPos <- c(ZeroPos, cross[i]+1)
+      } else {
+        ZeroPos <- c(ZeroPos, cross[i])
+      }
+    }
+
+
+    ZeroPos <- c(ZeroPos, zeros)
+    ZeroX <- x[ZeroPos]
+
+    # If there are no zero crossings a message is printed. Otherwise, a matrix is
+    # sent out with the index and x position of each zero crossing.
+    if(length(ZeroPos) == 0){
+      print("This vector contains no zero crossings.")
+    } else {
+      OutputMatrix <- cbind(ZeroPos, ZeroX)
+      colnames(OutputMatrix) <- c("Index", "X.position")
+      OutputMatrix
+    }
   }
 }
-
 #' Two-body Resonance Calculator.
 #'
 #' \code{resonance} calculates the energy crossover of a pair of atoms in state
