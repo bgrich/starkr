@@ -33,7 +33,7 @@ zero_cross <- function(x, y){
   # Looks at the zero crossings and determines which one is closest to zero
 
   if (length(cross) == 0) {
-    print("This vector contains no zero crossings.")
+    return("This vector contains no zero crossings.")
   } else {
     for(i in 1:length(cross)){
       if(abs(y[cross[i]]) > abs(y[cross[i]+1])){
@@ -50,7 +50,7 @@ zero_cross <- function(x, y){
     # If there are no zero crossings a message is printed. Otherwise, a matrix is
     # sent out with the index and x position of each zero crossing.
     if(length(ZeroPos) == 0){
-      print("This vector contains no zero crossings.")
+      return("This vector contains no zero crossings.")
     } else {
       OutputMatrix <- cbind(ZeroPos, ZeroX)
       colnames(OutputMatrix) <- c("Index", "X.position")
