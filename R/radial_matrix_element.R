@@ -34,10 +34,6 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   r2_O <- 2 * n2 * (n2 + 15)
   r2_I <- (n2 ^ 2 - n2 * sqrt(n2 ^ 2 - l2 * (l2 + 1)))
 
-  # Core radius as a function of core polarizability r = (a_c)^(1/3)
-  # Core polarizability is a_c = 9.0760 for Rubidium
-  core.radius <- (9.0760) ^ (1/3)
-
   # Determine which outer turning point is the larger to set as starting point
   r_0 <- max(r1_O, r2_O)
 
