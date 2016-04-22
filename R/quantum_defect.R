@@ -43,7 +43,7 @@ quantum_defect <- function(n,l,j){
     delta_6 <- 0
     delta_8 <- 0
   } else if(l == 2 & j == 3/2){
-    delta_0 <- 1.348091
+    delta_0 <- 1.34809171
     delta_2 <- -0.60286
     delta_4 <- 0
     delta_6 <- 0
