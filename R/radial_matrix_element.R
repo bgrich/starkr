@@ -74,14 +74,14 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   N2_i <- numeric()
   Psi12 <- numeric()
 
-  if(r1_O < r2_O){
+  if (r1_O < r2_O) {
     ksi <- c(ksi, ksi_0, ksi_1)
     Psi1 <- c(Psi1, 0, 0)
     Psi2 <- c(Psi2, Psi2_0, Psi2_1)
     N1_i <- c(N1_i, 0, 0)
     N2_i <- c(N2_i, 2 * ksi_0 ^ 2 * Psi2_0 ^ 2, 2 * ksi_1 ^ 2 * Psi2_1 ^ 2 )
     Psi12 <- c(Psi12, 0, 0)
-  } else{
+  } else {
     ksi <- c(ksi, ksi_0, ksi_1)
     Psi1 <- c(Psi1, Psi1_0, Psi1_1)
     Psi2 <- c(Psi2, 0, 0)
@@ -93,13 +93,13 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   # Numerov Algorithm
   # Iterates algorithm until the condition of ksi_(i+1) < sqrt(r_I)
   # or ksi_(i+1) < sqrt(core.radius) is met
-  repeat{
+  repeat {
     # When ksi_i is larger than the smallest of the starting points, the
     # normalization for the larger outer turning point accumulates while the
     # other does not.
-    if(ksi_i > sqrt(min(r1_O, r2_O))){
+    if (ksi_i > sqrt(min(r1_O, r2_O))) {
       #First statement is case when r1_O < r2_O, second statement is r2_O < r1_O
-      if(r1_O < r2_O){
+      if (r1_O < r2_O){
         g2_iplus1  <- -8 * (ksi_iplus1 ^ 2 * E2 + Z - (l2 + 1/4) * (l2 + 3 / 4) / (2 * ksi_iplus1 ^ 2))
         g2_i       <- -8 * (ksi_i ^ 2 * E2 + Z - (l2 + 1 / 4) * (l2 + 3/4) / (2 * ksi_i ^ 2))
         g2_iminus1 <- -8 * (ksi_iminus1 ^ 2 * E2 + Z - (l2 + 1 / 4) * (l2 + 3 / 4) / (2 * ksi_iminus1 ^ 2))
@@ -109,7 +109,7 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
         N1_iplus1 <- 0
         N2_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi2_iplus1 ^ 2 * h
 
-        if(ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)){
+        if (ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)){
           break
         } else {
           ksi <- c(ksi, ksi_iplus1)
@@ -120,7 +120,7 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
           Psi12 <- c(Psi12, 0)
         }
 
-      } else{
+      } else {
         g1_iplus1  <- -8 * (ksi_iplus1 ^ 2 * E1 + Z - (l1 + 1 / 4) * (l1 + 3 / 4) / (2 * ksi_iplus1 ^ 2))
         g1_i       <- -8 * (ksi_i ^ 2 * E1 + Z - (l1 + 1 / 4) * (l1 + 3 / 4) / (2 * ksi_i ^ 2))
         g1_iminus1 <- -8 * (ksi_iminus1 ^ 2 * E1 + Z - (l1 + 1 / 4) * (l1 + 3 / 4) / (2 * ksi_iminus1 ^ 2))
@@ -130,7 +130,7 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
         N1_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi1_iplus1 ^ 2 * h
         N2_iplus1 <- 0
 
-        if(ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)){
+        if (ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)) {
           break
         } else {
           ksi <- c(ksi, ksi_iplus1)
@@ -144,15 +144,15 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
       }
 
 
-      if(r1_O < r2_O){
+      if (r1_O < r2_O) {
         Psi2_iminus1 <- Psi2_i
         Psi2_i <- Psi2_iplus1
-      } else{
+      } else {
         Psi1_iminus1 <- Psi1_i
         Psi1_i <- Psi1_iplus1
       }
 
-    } else{
+    } else {
 
       g1_iplus1  <- -8 * (ksi_iplus1 ^ 2 * E1 + Z - (l1 + 1 / 4) * (l1 + 3 / 4) / (2 * ksi_iplus1 ^ 2))
       g1_i       <- -8 * (ksi_i ^ 2 * E1 + Z - (l1 + 1 / 4) * (l1 + 3 / 4) / (2 * ksi_i ^ 2))
@@ -168,7 +168,7 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
       N1_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi1_iplus1 ^ 2 * h
       N2_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi2_iplus1 ^ 2 * h
 
-      if(ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)){
+      if (ksi_iplus1 < sqrt(max(r1_I, r2_I)) | ksi_iplus1 < sqrt(core.radius)) {
         break
       } else {
         ksi <- c(ksi, ksi_iplus1)
