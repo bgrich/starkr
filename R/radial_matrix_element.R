@@ -62,6 +62,9 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   Psi2_iminus1 <- Psi2_0
   Psi2_i <- Psi2_1
 
+  Psi1_iplus1 <- 0
+  Psi2_iplus1 <- 0
+
   # Establishing Numerov integration data frame
   ksi <- numeric()
   Psi1 <- numeric()
