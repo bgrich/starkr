@@ -28,7 +28,7 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   E1 <- -1 / (2 * (n1 - delta1) ^ 2)
   E2 <- -1 / (2 * (n2 - delta2) ^ 2)
 
-  # Inner and outer turning points, core radius for both states
+  # Inner and outer turning points
   r1_O <- 2 * n1 * (n1 + 15)
   r1_I <- (n1 ^ 2 - n1 * sqrt(n1 ^ 2 - l1 * (l1 + 1)))
   r2_O <- 2 * n2 * (n2 + 15)
