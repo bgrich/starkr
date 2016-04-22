@@ -24,55 +24,55 @@ quantum_defect <- function(n,l,j){
   #The quantum defect parameters come from updated values from a variety of
   #papers.
 
-  if(l == 0){
+  if (l == 0) {
     delta_0 <- 3.1311804
     delta_2 <- 0.1784
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if(l == 1 & j == 1/2){
+  } else if (l == 1 & j == 1/2) {
     delta_0 <- 2.6548849
     delta_2 <- 0.2900
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if (l == 1 & j == 3/2){
+  } else if (l == 1 & j == 3/2) {
     delta_0 <- 2.6416737
     delta_2 <- 0.2950
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if(l == 2 & j == 3/2){
+  } else if (l == 2 & j == 3/2) {
     delta_0 <- 1.34809171
     delta_2 <- -0.60286
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if(l == 2 & j == 5/2){
+  } else if (l == 2 & j == 5/2) {
     delta_0 <- 1.34646572
     delta_2 <- -0.59600
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if(l == 3 & j == 5/2){
+  } else if (l == 3 & j == 5/2) {
     delta_0 <- 0.0165192
     delta_2 <- -0.085
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if(l == 3 & j == 7/2){
+  } else if (l == 3 & j == 7/2) {
     delta_0 <- 0.0165437
     delta_2 <- -0.086
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  } else if(l == 4){
+  } else if (l == 4) {
     delta_0 <- 0.00400
     delta_2 <- 0
     delta_4 <- 0
     delta_6 <- 0
     delta_8 <- 0
-  }else{
+  } else {
     delta_0 <- 0
     delta_2 <- 0
     delta_4 <- 0
