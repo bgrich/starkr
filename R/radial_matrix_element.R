@@ -30,9 +30,9 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
 
   # Inner and outer turning points, core radius for both states
   r1_O <- 2 * n1 * (n1 + 15)
-  r1_I <- (n1 ^ 2 - n1 * sqrt(n1 ^ 2 - l1 * (l1 + 1))) / 2
+  r1_I <- (n1 ^ 2 - n1 * sqrt(n1 ^ 2 - l1 * (l1 + 1)))
   r2_O <- 2 * n2 * (n2 + 15)
-  r2_I <- (n2 ^ 2 - n2 * sqrt(n2 ^ 2 - l2 * (l2 + 1)))/ 2
+  r2_I <- (n2 ^ 2 - n2 * sqrt(n2 ^ 2 - l2 * (l2 + 1)))
 
   # Core radius as a function of core polarizability r = (a_c)^(1/3)
   # Core polarizability is a_c = 9.0760 for Rubidium
