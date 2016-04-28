@@ -109,8 +109,8 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
         N2_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi2_iplus1 ^ 2 * h
 
         if (((l1 == 0 | l2 == 0) & ksi_iplus1 < 0.1) |
-           (l1 > 0 & ((ksi_iplus1 < sqrt(r1_I) & Psi1_iplus1 > Psi1_i & Psi1_i > Psi1_iminus1) | ksi_iplus1 < 0.1)) |
-           (l2 > 0 & ((ksi_iplus1 < sqrt(r2_I) & Psi2_iplus1 > Psi2_i & Psi2_i > Psi2_iminus1) | ksi_iplus1 < 0.1))) {
+           (l1 > 0 & ((ksi_iplus1 < sqrt(r1_I) & abs(Psi1_iplus1) > abs(Psi1_i) & abs(Psi1_i) > abs(Psi1_iminus1)) | ksi_iplus1 < 0.1)) |
+           (l2 > 0 & ((ksi_iplus1 < sqrt(r2_I) & abs(Psi2_iplus1) > abs(Psi2_i) & abs(Psi2_i) > abs(Psi2_iminus1)) | ksi_iplus1 < 0.1))) {
 
           N1_i[length(N1_i)] <- 0
           N2_i[length(N2_i)] <- 0
@@ -137,8 +137,8 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
         N2_iplus1 <- 0
 
         if (((l1 == 0 | l2 == 0) & ksi_iplus1 < 0.1) |
-           (l1 > 0 & ((ksi_iplus1 < sqrt(r1_I) & Psi1_iplus1 > Psi1_i & Psi1_i > Psi1_iminus1) | ksi_iplus1 < 0.1)) |
-           (l2 > 0 & ((ksi_iplus1 < sqrt(r2_I) & Psi2_iplus1 > Psi2_i & Psi2_i > Psi2_iminus1) | ksi_iplus1 < 0.1))) {
+            (l1 > 0 & ((ksi_iplus1 < sqrt(r1_I) & abs(Psi1_iplus1) > abs(Psi1_i) & abs(Psi1_i) > abs(Psi1_iminus1)) | ksi_iplus1 < 0.1)) |
+            (l2 > 0 & ((ksi_iplus1 < sqrt(r2_I) & abs(Psi2_iplus1) > abs(Psi2_i) & abs(Psi2_i) > abs(Psi2_iminus1)) | ksi_iplus1 < 0.1))) {
 
           N1_i[length(N1_i)] <- 0
           N2_i[length(N2_i)] <- 0
@@ -182,8 +182,8 @@ radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
       N2_iplus1 <- 2 * ksi_iplus1 ^ 2 * Psi2_iplus1 ^ 2 * h
 
       if (((l1 == 0 | l2 == 0) & ksi_iplus1 < 0.1) |
-         (l1 > 0 & ((ksi_iplus1 < sqrt(r1_I) & Psi1_iplus1 > Psi1_i & Psi1_i > Psi1_iminus1) | ksi_iplus1 < 0.1)) |
-         (l2 > 0 & ((ksi_iplus1 < sqrt(r2_I) & Psi2_iplus1 > Psi2_i & Psi2_i > Psi2_iminus1) | ksi_iplus1 < 0.1))) {
+          (l1 > 0 & ((ksi_iplus1 < sqrt(r1_I) & abs(Psi1_iplus1) > abs(Psi1_i) & abs(Psi1_i) > abs(Psi1_iminus1)) | ksi_iplus1 < 0.1)) |
+          (l2 > 0 & ((ksi_iplus1 < sqrt(r2_I) & abs(Psi2_iplus1) > abs(Psi2_i) & abs(Psi2_i) > abs(Psi2_iminus1)) | ksi_iplus1 < 0.1))) {
 
         N1_i[length(N1_i)] <- 0
         N2_i[length(N2_i)] <- 0
