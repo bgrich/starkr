@@ -17,6 +17,8 @@
 #'  @examples
 #'  quantum_defect(32, 1, 1.5)
 #'  quantum_defect(5, 0, 0.5)
+#'
+#'  @export
 
 quantum_defect <- function(n,l,j){
 
