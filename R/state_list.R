@@ -20,6 +20,8 @@
 #' angular momentum states.
 #' @param n_add_max A numeric. The maximum principle quantum number for low
 #' angular momentum states.
+#'
+#' @export
 state_list <- function(nmin, nmax, mj, n_add_min = 7, n_add_max = 7){
 
   #Populates a vector of n's in the range nmin to nmax.

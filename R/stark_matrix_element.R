@@ -16,6 +16,8 @@
 #' @param j2 A numeric. The total angular momentum number of state 2.
 #' @param mj1 A numeric. The magnetic angular momentum number of state 1.
 #' @param mj2 A numeric. The magnetic angular momentum number of state 2.
+#'
+#' @export
 stark_matrix_elem <- function(n1, n2, l1, l2, j1, j2, mj1, mj2){
 
   # Determines if the two mj terms are the same, if they are not then the matrix

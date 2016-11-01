@@ -17,6 +17,8 @@
 #' @param l2 A numeric. The orbital angular momentum number of state 2.
 #' @param j1 A numeric. The total angular momentum number of state 1.
 #' @param j2 A numeric. The total angular momentum number of state 2.
+#'
+#' @export
 optim_radial_matrix_element <- function(n1, n2, l1, l2, j1, j2, k = 1){
   # Number of Electrons
   Z <- 1

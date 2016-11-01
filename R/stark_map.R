@@ -17,6 +17,8 @@
 #' momentum quantum numbers.
 #' @param j A numeric. A vector that contains a series of total angular
 #' momentum quantum numbers.
+#'
+#' @export
 zero_field_energy_mat <- function(n, l, j){
   # Initializes a matrix to hold the zero field energy
   Energy <- matrix(0, nrow = length(n), ncol = length(n))
@@ -51,6 +53,8 @@ zero_field_energy_mat <- function(n, l, j){
 #'   quantum numbers.
 #' @param mj A numeric. A single number that represents the magnetic momentum
 #'   quantum number.
+#'
+#'   @export
 zero_field_energy_df <- function(n, l, j, mj){
 
   # Initializes a data frame to hold the zero field energy and information
@@ -87,6 +91,8 @@ zero_field_energy_df <- function(n, l, j, mj){
 #' @param l A numeric. The vector of orbital angular momentum quantum numbers.
 #' @param j A numeric. The vector of total angular momentum quantum numbers.
 #' @param mj A numeric. The magnetic momentum quantum number.
+#'
+#' @export
 stark_matrix <- function(n, l, j, mj){
 
   #Initializes and computes the Stark Matrix
@@ -129,6 +135,8 @@ stark_matrix <- function(n, l, j, mj){
 #' @param field_min A numeric that sets the mininum of the electric field.
 #' @param field_max A numeric that sets the maximum of the electric field.
 #' @param step_size A numeric that sets the step size of the electric field.
+#'
+#' @export
 stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step_size){
 
   # Determines the number of electric field points and the step size.
@@ -165,6 +173,8 @@ stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step
 #' @param field_min A numeric that sets the mininum of the electric field.
 #' @param field_max A numeric that sets the maximum of the electric field.
 #' @param step_size A numeric that sets the step size of the electric field.
+#'
+#' @export
 tidy_stark_energy <- function(zero_frame, stark_energy, field_min, field_max, step_size){
   field <- seq(field_min, field_max, by = step_size)
 

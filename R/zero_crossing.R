@@ -10,6 +10,8 @@
 #' vector to y.
 #' @param y A numeric. The dependent variable. Typically a signal or function
 #' of the independent variable x.
+#'
+#' @export
 zero_cross <- function(x, y){
   # Initiates variables to hold the index and x position for the zero crossing.
   ZeroPos <- numeric()
