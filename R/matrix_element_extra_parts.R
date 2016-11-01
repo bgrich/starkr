@@ -17,6 +17,8 @@
 #'
 #' @examples
 #' clebsch_gordan(1, 1 / 2, 0, 1 / 2, 3 / 2, 1 / 2)
+#'
+#' @export
 clebsch_gordan <- function(j1, j2, m1, m2, j, mj){
 
   #If case for the conditions that m1+m2 = mj
@@ -77,6 +79,8 @@ clebsch_gordan <- function(j1, j2, m1, m2, j, mj){
 #' @param m1 A numeric.
 #' @param m2 A numeric.
 #' @param m3 A numeric.
+#'
+#' @export
 wigner_3j <- function(j1,j2,j3,m1,m2,m3){
   output <- (-1)^(j1-j2-m3)*clebsch_gordan(j1,j2,m1,m2,j3,-m3)/sqrt(2*j3+1)
   output
@@ -102,6 +106,8 @@ wigner_3j <- function(j1,j2,j3,m1,m2,m3){
 #'
 #' @examples
 #' clebsch_gordan2(1, 1 / 2, 0, 1 / 2, 3 / 2, 1 / 2)
+#'
+#' @export
 clebsch_gordan2 <- function(j1, j2, m1, m2, j, mj){
 
   #If case for the conditions that m1+m2 = mj
@@ -156,6 +162,8 @@ clebsch_gordan2 <- function(j1, j2, m1, m2, j, mj){
 #' @param lprime A numeric. The orbital angular momentum of the final state.
 #' @param ml A numeric. The magnetic momentum of both the starting and final
 #' state. The m_l of each state must be equal.
+#'
+#' @export
 sphere_mat_element <- function(l, lprime, ml){
   if((lprime == (l + 1)) | (lprime == (l - 1))){
     #If lprime is equal to l-1, then this if statement is processed
