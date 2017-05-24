@@ -183,7 +183,9 @@ are the different field steps and each columns corresponds to a different
 starting state.
 
 ```{r stark_map calc}
-stark_map <- starkr::stark_eigen(mat, zero_energy_mat, 0, 4, 0.5)
+field <- seq(0, 4, by = 0.5)
+
+stark_map <- starkr::stark_eigen(mat, zero_energy_mat, field)
 stark_map[1:4, 1:4]
 ```
 
@@ -212,7 +214,7 @@ frame with all of the energy and field values and matching $E_{0}$, $n$, $l$,
 $j$, $m_{j}$, and a string representation of the state.
 
 ```{r tidy df}
-tidy_df <- starkr::tidy_stark_energy(zero_df, stark_map, 0, 4, 0.5)
+tidy_df <- starkr::tidy_stark_energy(zero_df, stark_map, field)
 tidy_df
 ```
 
