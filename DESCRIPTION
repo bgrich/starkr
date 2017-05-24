@@ -1,7 +1,7 @@
 Package: starkr
 Type: Package
 Title: Calculation of Stark Maps for Rubidium-85
-Version: 0.1.0.9000
+Version: 0.1.0.9001
 Date: 2015-09-17
 Authors@R: person("Brian", "Richards", email = "brian.g.richards@gmail.com", role = c("aut", "cre"))
 Description: This package can be used to calculate the Stark matrix for
