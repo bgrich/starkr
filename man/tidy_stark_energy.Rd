@@ -29,4 +29,3 @@ The Stark energy matrix is provided by the function
 \code{\link{stark_eigen}}. The field_min, field_max, and step_size should
 be set to same values as when \code{stark_eigen} was run.
 }
-

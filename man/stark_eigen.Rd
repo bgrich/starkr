@@ -31,4 +31,3 @@ field step as the rows. The columns are in descending order and the rows
 are in the initial state order of the zero electric field matrix and Stark
 matrix.
 }
-

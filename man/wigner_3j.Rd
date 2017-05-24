@@ -32,4 +32,3 @@ j1 \tab j2 \tab j3\cr
 m1 \tab m2 \tab m3
 }
 }
-

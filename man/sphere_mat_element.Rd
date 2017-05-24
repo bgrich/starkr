@@ -22,4 +22,3 @@ This function calculates the spherical matrix element for a given l, l',
 and m_l. It finds the matrix element <l, m|cos(theta)|l', m> based on a
 paper by Zimmerman et al, PRA 20, 2251 (1979).
 }
-

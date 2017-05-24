@@ -34,4 +34,3 @@ create the Stark matrix. The energy is determined by: \deqn{E = -1 / (2* (n -
 \delta(n, l, j))^2)} where \eqn{\delta(n, l, j)} is determined by
 \code{\link{quantum_defect}}.
 }
-

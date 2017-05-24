@@ -33,4 +33,3 @@ radial matrix elements as done in Appendix A of Zimmerman et al, PRA, 20, 2251
 \eqn{\Psi = r^(3/4) R(r)} as done by Bhatti, Cromer, and Cooke, PRA, 24, 161
 (1981).
 }
-

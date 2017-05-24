@@ -34,4 +34,3 @@ those sections will be ignored and no extra states will be added.
 
 The output takes the form of a matrix with columns n, l, and j.
 }
-

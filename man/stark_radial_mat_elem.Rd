@@ -40,4 +40,3 @@ zero field. The Stark matrix required for the function is produced by
 \code{\link{stark_matrix}} and must correspond to the provided n_min and
 n_max.
 }
-

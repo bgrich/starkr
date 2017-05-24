@@ -28,4 +28,3 @@ This function calculates the quantum defect for an arbitrary state
 
 @export
 }
-

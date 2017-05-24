@@ -33,4 +33,3 @@ element is determined based on equation 10 from Zimmerman et al., PRA, 20,
 2251 (1979). For a non-zero matrix element, the conditions mj1 = mj2 and l2 =
 l1 +/- 1 must be met.
 }
-

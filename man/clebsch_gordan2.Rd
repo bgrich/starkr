@@ -33,4 +33,3 @@ Physics.
 clebsch_gordan2(1, 1 / 2, 0, 1 / 2, 3 / 2, 1 / 2)
 
 }
-

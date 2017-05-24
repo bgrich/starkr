@@ -21,4 +21,3 @@ and y.
 This function calculates the zero crossing for vectors x and y. The vector y
 is the dependent variable and the vector x is the indepdenent variable.
 }
-

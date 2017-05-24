@@ -29,4 +29,3 @@ computed for the uper right triangle of the matrix. Copies of those
 elements are made in to their symmetric counterparts on the lower left
 trinagle of the matrix.
 }
-

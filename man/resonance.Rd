@@ -28,4 +28,3 @@ inverse centimeters (cm^-1). The second argument, AFrame, is a separate data
 frame that already has the frame for state A selected. The other two inputs
 should be strings that correspond to a the state column in Frame.
 }
-
