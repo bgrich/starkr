@@ -4,7 +4,7 @@
 \alias{tidy_stark_energy}
 \title{Tidy Stark Energy Data Frame.}
 \usage{
-tidy_stark_energy(zero_frame, stark_energy, field_min, field_max, step_size)
+tidy_stark_energy(zero_frame, stark_energy, field)
 }
 \arguments{
 \item{zero_frame}{A data frame that contains the zero electric field
@@ -13,11 +13,8 @@ energies and state information.}
 \item{stark_energy}{A matrix that contains the eigen energies for the
 states in the columns and the field levels in the rows.}
 
-\item{field_min}{A numeric that sets the mininum of the electric field.}
-
-\item{field_max}{A numeric that sets the maximum of the electric field.}
-
-\item{step_size}{A numeric that sets the step size of the electric field.}
+\item{field}{A vector containing the field positions. Must match that used
+for \code{stark_eigen}.}
 }
 \description{
 \code{tidy_stark_energy} creates a tidy data frame of the Stark energy

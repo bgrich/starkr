@@ -170,13 +170,12 @@ stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step
 #' energies and state information.
 #' @param stark_energy A matrix that contains the eigen energies for the
 #' states in the columns and the field levels in the rows.
-#' @param field_min A numeric that sets the mininum of the electric field.
-#' @param field_max A numeric that sets the maximum of the electric field.
-#' @param step_size A numeric that sets the step size of the electric field.
+#' @param field A vector containing the field positions. Must match that used
+#' for \code{stark_eigen}.
 #'
 #' @export
-tidy_stark_energy <- function(zero_frame, stark_energy, field_min, field_max, step_size){
-  field <- seq(field_min, field_max, by = step_size)
+tidy_stark_energy <- function(zero_frame, stark_energy, field){
+  # field <- seq(field_min, field_max, by = step_size)
 
   #Turns the data frame in to a dplyr table.
   ZeroFrame <- dplyr::tbl_df(zero_frame)
