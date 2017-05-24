@@ -4,7 +4,7 @@
 \alias{stark_eigen}
 \title{Eigenvalues of the Stark Matrix.}
 \usage{
-stark_eigen(stark_matrix, zero_field_mat, field_min, field_max, step_size)
+stark_eigen(stark_matrix, zero_field_mat, field)
 }
 \arguments{
 \item{stark_matrix}{A matrix created using the function
@@ -13,11 +13,8 @@ stark_eigen(stark_matrix, zero_field_mat, field_min, field_max, step_size)
 \item{zero_field_mat}{A matrix created using the function
 \code{\link{zero_field_energy_mat}}.}
 
-\item{field_min}{A numeric that sets the mininum of the electric field.}
-
-\item{field_max}{A numeric that sets the maximum of the electric field.}
-
-\item{step_size}{A numeric that sets the step size of the electric field.}
+\item{field}{A vector containing the electric field values to calculated
+over.}
 }
 \description{
 \code{stark_eigen} calculates the eigenvalues of the Stark matrix for a

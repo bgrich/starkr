@@ -132,15 +132,14 @@ stark_matrix <- function(n, l, j, mj){
 #'   \code{\link{stark_matrix}}.
 #' @param zero_field_mat A matrix created using the function
 #'   \code{\link{zero_field_energy_mat}}.
-#' @param field_min A numeric that sets the mininum of the electric field.
-#' @param field_max A numeric that sets the maximum of the electric field.
-#' @param step_size A numeric that sets the step size of the electric field.
+#' @param field A vector containing the electric field values to calculated
+#' over.
 #'
 #' @export
-stark_eigen <- function(stark_matrix, zero_field_mat, field_min, field_max, step_size){
+stark_eigen <- function(stark_matrix, zero_field_mat, field){
 
   # Determines the number of electric field points and the step size.
-  field <- seq(field_min, field_max, by = step_size)
+  # field <- seq(field_min, field_max, by = step_size)
   field.au <- field / 5.142e9
   Energy <- numeric()
 
